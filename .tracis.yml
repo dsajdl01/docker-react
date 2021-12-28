@@ -1,0 +1,9 @@
+sodo: required
+services:
+ - docker
+ 
+before_install:
+ - docker build -t dsajdl/docker-react -f Dockerfile.dev .
+
+script:
+ - docker run dsajdl/docker-react npm run test -- --coverage
